@@ -88,11 +88,11 @@ playListButton.addEventListener('click',()=>{
 repeatButton.addEventListener('click',()=>{
     if(repeatButton.classList.contains('active')){
         repeatButton.classList.remove('active')
-        audio.loop = true
+        audio.loop = false
         console.log('Tekrar Kapatıldı')
     }else{
         repeatButton.classList.add('active')
-        audio.loop = false
+        audio.loop = true
         console.log('Tekrar Acildi')
     }
 })
@@ -152,7 +152,7 @@ const nextSong =() =>{
         if(index == (songsList.length-1)){
             index = 0
         }else{
-            index += index
+            index+= 1 
         }
         setSong(index)
     }else{
@@ -164,7 +164,7 @@ const nextSong =() =>{
 const previousSong =() =>{
     pauseAudio()
     if(index > 0){  
-        index -= index
+        index -= 1
     }else{
         index = songsList.length - 1
     }
